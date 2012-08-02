@@ -280,7 +280,7 @@ class PublishDialog(QtGui.QDialog):
             return nuke.critical("Cannot save out nodes to disk")
 
         if os.path.exists(publish['file_path']):
-            result = tank.util.register_publish(publish['tank'],
+            result = tank.util.register_publish(publish_tank,
                                                 publish['context'],
                                                 publish['file_path'],
                                                 publish['name'],
