@@ -52,7 +52,7 @@ configuration:
 # should be written down here. Fields are broken down per type.
 #
 requires_shotgun_fields:
-    TankPublishedFiles:
+    TankPublishedFile:
           - { "system_name": "sg_tags", "type": "text" }
 
 
