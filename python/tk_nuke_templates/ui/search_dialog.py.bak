@@ -1,0 +1,111 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'search_dialog.ui'
+#
+# Created: Tue Jul 24 16:11:17 2012
+#      by: PyQt4 UI code generator 4.7.2
+#
+# WARNING! All changes made in this file will be lost!
+
+from PySide import QtCore, QtGui
+
+class Ui_Dialog(object):
+    def setupUi(self, Dialog):
+        Dialog.setObjectName("Dialog")
+        Dialog.setWindowModality(QtCore.Qt.ApplicationModal)
+        Dialog.resize(888, 601)
+        font = QtGui.QFont()
+        font.setWeight(50)
+        font.setItalic(False)
+        font.setUnderline(False)
+        font.setBold(False)
+        Dialog.setFont(font)
+        Dialog.setLayoutDirection(QtCore.Qt.LeftToRight)
+        self.label = QtGui.QLabel(Dialog)
+        self.label.setGeometry(QtCore.QRect(10, 9, 768, 30))
+        self.label.setObjectName("label")
+        self.pushButton = QtGui.QPushButton(Dialog)
+        self.pushButton.setGeometry(QtCore.QRect(10, 59, 428, 105))
+        self.pushButton.setStyleSheet("None")
+        self.pushButton.setText("")
+        self.pushButton.setObjectName("pushButton")
+        self.formLayoutWidget = QtGui.QWidget(Dialog)
+        self.formLayoutWidget.setGeometry(QtCore.QRect(24, 69, 399, 86))
+        self.formLayoutWidget.setObjectName("formLayoutWidget")
+        self.formLayout = QtGui.QFormLayout(self.formLayoutWidget)
+        self.formLayout.setVerticalSpacing(12)
+        self.formLayout.setObjectName("formLayout")
+        self.label_2 = QtGui.QLabel(self.formLayoutWidget)
+        self.label_2.setMinimumSize(QtCore.QSize(120, 0))
+        self.label_2.setObjectName("label_2")
+        self.formLayout.setWidget(0, QtGui.QFormLayout.LabelRole, self.label_2)
+        self.filter1 = QtGui.QLineEdit(self.formLayoutWidget)
+        self.filter1.setStyleSheet("background-image: url(:/res/search.png);\n"
+"background-repeat: no-repeat;\n"
+"background-position: center left;\n"
+"border-style: inset; \n"
+"border-color: #535353; \n"
+"border-radius: 9px;\n"
+"padding-left: 15px;")
+        self.filter1.setObjectName("filter1")
+        self.formLayout.setWidget(0, QtGui.QFormLayout.FieldRole, self.filter1)
+        self.label_3 = QtGui.QLabel(self.formLayoutWidget)
+        self.label_3.setObjectName("label_3")
+        self.label_3.setMinimumSize(QtCore.QSize(120, 0))
+        self.formLayout.setWidget(1, QtGui.QFormLayout.LabelRole, self.label_3)
+        self.label_4 = QtGui.QLabel(self.formLayoutWidget)
+        self.label_4.setObjectName("label_4")
+        self.label_4.setMinimumSize(QtCore.QSize(120, 0))
+        self.formLayout.setWidget(2, QtGui.QFormLayout.LabelRole, self.label_4)
+        self.filter2 = QtGui.QLineEdit(self.formLayoutWidget)
+        self.filter2.setStyleSheet("background-image: url(:/res/search.png);\n"
+"background-repeat: no-repeat;\n"
+"background-position: center left;\n"
+"border-style: inset; \n"
+"border-color: #535353; \n"
+"border-radius: 9px;\n"
+"padding-left: 15px;")
+        self.filter2.setObjectName("filter2")
+        self.formLayout.setWidget(1, QtGui.QFormLayout.FieldRole, self.filter2)
+        self.filter3 = QtGui.QLineEdit(self.formLayoutWidget)
+        self.filter3.setStyleSheet("background-image: url(:/res/search.png);\n"
+"background-repeat: no-repeat;\n"
+"background-position: center left;\n"
+"border-style: inset; \n"
+"border-color: #535353; \n"
+"border-radius: 9px;\n"
+"padding-left: 15px;")
+        self.filter3.setObjectName("filter3")
+        self.formLayout.setWidget(2, QtGui.QFormLayout.FieldRole, self.filter3)
+        #self.tree = QtGui.QTreeView(Dialog)
+        self.left_view = TreeBrowserWidget(Dialog)
+        self.left_view.setGeometry(QtCore.QRect(10, 166, 427, 398))
+        self.left_view.setMinimumSize(QtCore.QSize(0, 300))
+        self.left_view.setToolTip("")
+        self.left_view.setObjectName("tree")
+        self.importButton = QtGui.QPushButton(Dialog)
+        self.importButton.setGeometry(QtCore.QRect(762, 569, 115, 27))
+        self.importButton.setObjectName("importButton")
+        self.refresh = QtGui.QPushButton(Dialog)
+        self.refresh.setGeometry(QtCore.QRect(9, 569, 115, 27))
+        self.refresh.setMinimumSize(QtCore.QSize(115, 0))
+        self.refresh.setObjectName("refresh")
+        self.right_view = TemplateBrowserWidget(Dialog)
+        self.right_view.setGeometry(QtCore.QRect(450, 61, 429, 503))
+        self.right_view.setObjectName("right_view")
+
+        self.retranslateUi(Dialog)
+        QtCore.QMetaObject.connectSlotsByName(Dialog)
+
+    def retranslateUi(self, Dialog):
+        Dialog.setWindowTitle(QtGui.QApplication.translate("Dialog", "Tank Templates", None, QtGui.QApplication.UnicodeUTF8))
+        self.label.setText(QtGui.QApplication.translate("Dialog", "<b><big>What template would you like to use today?</big></b>", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_2.setText(QtGui.QApplication.translate("Dialog", "Show or Shot", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_3.setText(QtGui.QApplication.translate("Dialog", "Name", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_4.setText(QtGui.QApplication.translate("Dialog", "Tags", None, QtGui.QApplication.UnicodeUTF8))
+        self.importButton.setText(QtGui.QApplication.translate("Dialog", "Import It...", None, QtGui.QApplication.UnicodeUTF8))
+        self.refresh.setText(QtGui.QApplication.translate("Dialog", "Refresh", None, QtGui.QApplication.UnicodeUTF8))
+
+from ..template_browser import TemplateBrowserWidget
+from ..tree_browser import TreeBrowserWidget
+from . import resources_rc

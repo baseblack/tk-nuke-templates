@@ -1,0 +1,58 @@
+#
+# Metadata defining the behavior and requirements for this app
+#
+
+################################################################################################
+# Expected fields in the configuration file for this app
+#
+# These are all the parameters that each configuration using this app will need to
+# specify. Each parameter has a description, a type and some types have additional fields.
+# You can use standard python types such as list, dict etc.
+# You can also use the special type template which refers to a Tank template.
+#
+#
+configuration:
+    template_show_path:
+        type: template
+        description: The file path for a show level nuke template script.
+                     Typically used for nodes or gizmo groups which provide a tool
+                     but are not controlled by the software/tech team.
+        optional_fields: "*"
+    template_sequence_path:
+        type: template
+        description: The file path for a sequence level nuke template script.
+                     Usually used for scripts which are shared across all of the
+                     shots in a sequence. For example with grading settings or as
+                     a starting point for a users new script.
+        optional_fields: "*"
+    template_shot_path:
+        type: template
+        description: The file path for a shot level nuke template script.
+                     An individual script template which has been released for reuse
+                     on the shot, or for other shots to make use of.
+        optional_fields: "*"
+    template_show_name:
+        type: template
+        description: Name of the released template as seen in Shotgun.
+        fields: "*"
+    template_sequence_name:
+        type: template
+        description: Name of the released template as seen in Shotgun.
+        fields: "*"
+    template_shot_name:
+        type: template
+        description: Name of the released template as seen in Shotgun.
+        fields: "*"
+
+
+################################################################################################
+# The Shotgun fields that this app needs in order to operate correctly
+#
+# Any non-standard fields that this app requires in Shotgun in order to operate
+# should be written down here. Fields are broken down per type.
+#
+requires_shotgun_fields:
+    TankPublishedFiles:
+          - { "system_name": "sg_tags", "type": "text" }
+
+
