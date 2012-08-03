@@ -257,6 +257,7 @@ class PublishDialog(QtGui.QDialog):
             fields['version'] += template_path.get_fields(previous_publishes[-1])['version']
 
         # Setup data for publishing
+        publish = {}
         publish['name'] = template_name.apply_fields(fields)
         publish['version'] = fields['version']
         publish['file_path'] = template_path.apply_fields(fields)
